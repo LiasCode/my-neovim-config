@@ -11,24 +11,6 @@ require('lualine').setup {
   },
 }
 
-require('bufferline').setup({
-  options = {
-    mode = 'buffers',
-    offsets = {
-      {filetype = 'NvimTree'}
-    },
-  },
-  highlights = {
-    buffer_selected = {
-      italic = false
-    },
-    indicator_selected = {
-      fg = {attribute = 'fg', highlight = 'Function'},
-      italic = false
-    }
-  }
-})
-
 require('nvim-cursorline').setup {
   cursorline = {
     enable = false,
@@ -43,14 +25,12 @@ require('nvim-cursorline').setup {
 }
 
 -- Enable Comment.nvim
-require('Comment').setup({
-
-})
+require('Comment').setup({})
 
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help indent_blankline.txt`
 require('indent_blankline').setup {
-  char = '┊',
+  char = '|',
   show_trailing_blankline_indent = false,
 }
 
@@ -65,7 +45,4 @@ require('gitsigns').setup {
     changedelete = { text = '~' },
   },
 }
-
-
-
 
