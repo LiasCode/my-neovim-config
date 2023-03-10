@@ -7,7 +7,7 @@ vim.opt.termguicolors = true
 
 -- OR setup with some options
 require("nvim-tree").setup({
-  sort_by = "case_sensitive",
+  sort_by = "name",
   view = {
     width = 30,
     mappings = {
@@ -18,10 +18,20 @@ require("nvim-tree").setup({
   },
   renderer = {
     group_empty = true,
+    indent_markers = {
+      enable = true
+    },
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
+  git = {
+    enable = true,
+    ignore = false,
+    show_on_dirs = true,
+    show_on_open_dirs = true,
+    timeout = 400,
+  }
 })
 
 local function open_nvim_tree(data)

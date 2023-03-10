@@ -71,4 +71,7 @@ prettier.setup({
   },
 })
 
-vim.keymap.set({ "n", "v" }, "<Leader>ff", "<Esc>:Prettier<CR>:w<CR>")
+vim.keymap.set({ "n", "v" }, "<Leader>ff", function()
+  vim.cmd('Prettier');
+  vim.cmd('write')
+end);
