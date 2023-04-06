@@ -144,6 +144,11 @@ cmp.setup {
       return item
     end,
   },
+  appearance = {
+    menu = {
+      direction = 'above' -- auto or above or below
+    }
+  }
 }
 
 local sign = function(opts)
