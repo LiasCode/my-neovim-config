@@ -2,7 +2,11 @@
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'gitignore' ,'javascript' , 'help', 'vim', 'json' , 'http' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'gitignore', 'javascript', 'help', 'vim', 'json', 'http' },
+
+  autotag = {
+    enable = true,
+  },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -66,4 +70,3 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
-

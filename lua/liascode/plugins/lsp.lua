@@ -122,10 +122,42 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
+    { name = 'path' },
+    { name = 'nvim_lsp', keyword_length = 1 },
+    { name = 'buffer',   keyword_length = 3 },
+    { name = 'luasnip',  keyword_length = 2 },
+  },
+  window = {
+    documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered()
+  },
+  formatting = {
+    fields = { 'menu', 'abbr', 'kind' },
+    format = function(entry, item)
+      local menu_icon = {
+        nvim_lsp = 'LSP',
+        luasnip = '~',
+        buffer = 'BUFFER',
+        path = '🖫',
+      }
+      item.menu = menu_icon[entry.source.name]
+      return item
+    end,
   },
 }
+
+local sign = function(opts)
+  vim.fn.sign_define(opts.name, {
+    texthl = opts.name,
+    text = opts.text,
+    numhl = ''
+  })
+end
+
+sign({ name = 'DiagnosticSignError', text = '✘' })
+sign({ name = 'DiagnosticSignWarn', text = 'W' })
+sign({ name = 'DiagnosticSignHint', text = '⚑' })
+sign({ name = 'DiagnosticSignInfo', text = '' })
 
 -- UI CUSTOMS
 vim.diagnostic.config({
@@ -135,6 +167,20 @@ vim.diagnostic.config({
   },
   signs = true,
   underline = true,
-  update_in_insert = false,
-  severity_sort = false,
+  update_in_insert = true,
+  severity_sort = true,
+  float = {
+    border = 'rounded',
+    source = 'always',
+  },
 });
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  { border = 'rounded' }
+);
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  { border = 'rounded' }
+);
