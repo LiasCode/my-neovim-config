@@ -2,7 +2,8 @@ vim.g.mapleader = " ";
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-vim.cmd "tnoremap <Esc><Esc> <C-\\><C-n>:q!<CR>"
+-- Quit Console
+vim.cmd "tnoremap <Esc><Esc> <C-\\><C-n><CR>"
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
