@@ -54,7 +54,7 @@ vim.keymap.set('n', '<C-n>', ':bn<CR>')
 vim.keymap.set('n', '<C-d>', ':bdelete<CR>')
 
 -- Toggle Term
-vim.keymap.set({ 'i', 'n' }, '<leader>tt', '<Esc>:ToggleTerm<CR>');
+vim.keymap.set({ 'n' }, '<leader>tt', '<Esc>:ToggleTerm<CR>');
 
 -- Telescope
 vim.keymap.set('n', '<leader>?',
@@ -76,4 +76,3 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-
