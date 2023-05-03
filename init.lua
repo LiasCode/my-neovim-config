@@ -41,6 +41,9 @@ require('lazy').setup({
     {
       "nvim-tree/nvim-tree.lua",
       config = function()
+        vim.g.loaded_netrwPlugin = 1
+        vim.g.loaded_netrw = 1
+
         require("nvim-tree").setup({
           sort_by = "type",
           view = {
@@ -388,8 +391,8 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+
+
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
@@ -408,7 +411,7 @@ vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- vim.keymap.set("n", "<leader>ef", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>ef", "<Esc>:Ex .<CR>");
 vim.keymap.set("n", "<leader>ef", ":NvimTreeToggle<CR>");
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
