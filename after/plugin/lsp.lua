@@ -115,6 +115,6 @@ cmp.setup {
   },
 }
 
-vim.cmd('autocmd BufRead,BufNewFile *.jsx set filetype=typescript.tsx')
-vim.cmd('autocmd BufRead,BufNewFile *.http set filetype=http')
-
+vim.cmd('autocmd BufRead,BufNewFile *.jsx set filetype=typescript.tsx');
+vim.cmd('autocmd BufRead,BufNewFile *.http set filetype=http');
+vim.cmd('autocmd BufRead,BufEnter *.astro set filetype=astro');
