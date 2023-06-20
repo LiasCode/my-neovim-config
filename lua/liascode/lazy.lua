@@ -24,7 +24,7 @@ require('lazy').setup({
       dependencies = {
         { 'williamboman/mason.nvim', config = true },
         'williamboman/mason-lspconfig.nvim',
-        { 'j-hui/fidget.nvim',       opts = {} },
+        { 'j-hui/fidget.nvim',       opts = {}},
         { 'folke/neodev.nvim', }
       },
     },
@@ -61,6 +61,8 @@ require('lazy').setup({
       priority = 1000,
     },
 
+    { "catppuccin/nvim",         name = "catppuccin", priority = 1000 },
+
     {
       'lukas-reineke/indent-blankline.nvim',
       opts = {
@@ -70,8 +72,9 @@ require('lazy').setup({
     },
 
     { 'numToStr/Comment.nvim',         opts = {} },
-    { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
+    { 'nvim-lua/plenary.nvim' },
 
+    { 'nvim-telescope/telescope.nvim', version = '*' },
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make',

@@ -24,5 +24,3 @@ require("rest-nvim").setup({
   custom_dynamic_variables = {},
   yank_dry_run = true,
 })
-
-vim.keymap.set("n", "<leader>rr", "<Plug>RestNvim", { noremap = true })

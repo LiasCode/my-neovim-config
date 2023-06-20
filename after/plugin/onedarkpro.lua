@@ -19,5 +19,3 @@ require("onedarkpro").setup({
     virtual_text = "bold,italic",
   }
 });
-
-vim.cmd.colorscheme('onedark_vivid');
