@@ -4,6 +4,7 @@ vim.g.maplocalleader = ' '
 -- [[ Basic Keymaps ]]
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set({ "n", "i", "v", "x" }, "<C-l>", "<Esc>");
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
