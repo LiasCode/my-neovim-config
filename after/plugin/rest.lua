@@ -23,4 +23,7 @@ require("rest-nvim").setup({
   env_file = '.env',
   custom_dynamic_variables = {},
   yank_dry_run = true,
-})
+});
+
+-- REST
+vim.keymap.set("n", "<leader>rr", "<Plug>RestNvim", { noremap = true })
