@@ -15,9 +15,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     'tpope/vim-fugitive',
-    'tpope/vim-rhubarb',
     'tpope/vim-sleuth',
     'tpope/vim-vinegar',
+    'gelguy/wilder.nvim',
 
     {
       -- LSP Configuration & Plugins
@@ -36,13 +36,9 @@ require('lazy').setup({
       dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
     },
 
-
-    { "nvim-tree/nvim-tree.lua", },
-
     {
       'nvim-tree/nvim-web-devicons',
     },
-
 
     {
       'lewis6991/gitsigns.nvim',
@@ -57,20 +53,7 @@ require('lazy').setup({
       },
     },
 
-    {
-      "olimorris/onedarkpro.nvim",
-      priority = 1000,
-    },
-
     { "catppuccin/nvim",         name = "catppuccin", priority = 1000 },
-
-    {
-      'lukas-reineke/indent-blankline.nvim',
-      opts = {
-        char = '┊',
-        show_trailing_blankline_indent = false,
-      },
-    },
 
     { 'numToStr/Comment.nvim',         opts = {} },
     { 'nvim-lua/plenary.nvim' },
@@ -85,10 +68,6 @@ require('lazy').setup({
     },
 
     {
-      "akinsho/toggleterm.nvim",
-    },
-
-    {
       'nvim-treesitter/nvim-treesitter',
       dependencies = {
         'nvim-treesitter/nvim-treesitter-textobjects',
@@ -98,18 +77,8 @@ require('lazy').setup({
     { "nvim-treesitter/nvim-treesitter-context" },
 
     {
-      'romgrk/barbar.nvim',
-    },
-
-    {
-      'nvim-lualine/lualine.nvim', -- Fancier statusline
-    },
-
-    {
       'yamatsum/nvim-cursorline',
     },
-
-    { "nvim-lua/plenary.nvim" },
 
     {
       "rest-nvim/rest.nvim",
