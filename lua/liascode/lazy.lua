@@ -41,6 +41,14 @@ require('lazy').setup({
     },
 
     {
+      'windwp/nvim-ts-autotag',
+    },
+
+    {
+      'm4xshen/autoclose.nvim'
+    },
+
+    {
       'lewis6991/gitsigns.nvim',
       opts = {
         signs = {
@@ -53,8 +61,7 @@ require('lazy').setup({
       },
     },
 
-    { "catppuccin/nvim",         name = "catppuccin", priority = 1000 },
-
+    { "catppuccin/nvim",               name = "catppuccin", priority = 1000 },
     { 'numToStr/Comment.nvim',         opts = {} },
     { 'nvim-lua/plenary.nvim' },
 
