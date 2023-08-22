@@ -19,6 +19,10 @@ require('lazy').setup({
     'tpope/vim-vinegar',
     'gelguy/wilder.nvim',
 
+    -- Prettier
+    'jose-elias-alvarez/null-ls.nvim',
+    'MunifTanjim/prettier.nvim',
+
     {
       -- LSP Configuration & Plugins
       'neovim/nvim-lspconfig',
