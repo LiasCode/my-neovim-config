@@ -5,6 +5,7 @@ prettier.setup({
   filetypes = {
     "css",
     "graphql",
+    "astro",
     "html",
     "javascript",
     "javascriptreact",

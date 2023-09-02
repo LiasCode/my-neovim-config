@@ -18,6 +18,10 @@ require('lazy').setup({
     'tpope/vim-sleuth',
     'tpope/vim-vinegar',
     'gelguy/wilder.nvim',
+    'brenoprata10/nvim-highlight-colors',
+    {
+      'romgrk/barbar.nvim',
+    },
 
     -- Prettier
     'jose-elias-alvarez/null-ls.nvim',
@@ -87,10 +91,15 @@ require('lazy').setup({
     },
     { "nvim-treesitter/nvim-treesitter-context" },
 
-    {
-      'yamatsum/nvim-cursorline',
-    },
+    { "nvim-tree/nvim-tree.lua", },
 
+    {
+      "olimorris/onedarkpro.nvim",
+      priority = 1000,
+    },
+    {
+      'nvim-lualine/lualine.nvim', -- Fancier statusline
+    },
     {
       "rest-nvim/rest.nvim",
     },
