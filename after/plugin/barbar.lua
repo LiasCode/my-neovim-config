@@ -24,9 +24,9 @@ require('bufferline').setup({
     diagnostics = {
       -- you can use a list
       { enabled = true, icon = 'ﬀ' }, -- ERROR
-      { enabled = false },            -- WARN
-      { enabled = false },            -- INFO
-      { enabled = true },             -- HINT
+      { enabled = false }, -- WARN
+      { enabled = false }, -- INFO
+      { enabled = true }, -- HINT
       -- OR `vim.diagnostic.severity`
       [vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'ﬀ' },
       [vim.diagnostic.severity.WARN] = { enabled = false },

@@ -119,3 +119,15 @@ vim.cmd('autocmd BufRead,BufNewFile *.jsx set filetype=typescript.tsx');
 vim.cmd('autocmd BufRead,BufNewFile *.http set filetype=http');
 vim.cmd('autocmd BufRead,BufEnter *.astro set filetype=astro');
 
+local nvim_lsp = require("lspconfig");
+
+nvim_lsp.denols.setup {
+  on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+}
+
+nvim_lsp.tsserver.setup {
+  on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
+  single_file_support = false
+}
