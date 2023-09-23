@@ -45,6 +45,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 });
 
 vim.keymap.set("n", "<leader>ef", function () vim.cmd 'Ex'  end);
-vim.keymap.set("n", "<C-n>", function () vim.cmd 'bNext'  end);
+vim.keymap.set("n", "<C-n>", function () vim.cmd 'bnext'  end);
 vim.keymap.set("n", "<C-b>", function () vim.cmd 'bprevious'  end);
 vim.keymap.set("n", "<C-d>", function () vim.cmd 'bdelete'  end);

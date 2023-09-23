@@ -1,6 +1,6 @@
 -- [[ Configure Treesitter ]]
 require('nvim-treesitter.configs').setup {
-  ensure_installed = {
+  ensure_installed      = {
     'c',
     'cpp',
     'go',
@@ -14,12 +14,14 @@ require('nvim-treesitter.configs').setup {
     'http',
     'json'
   },
-  auto_install = false,
-  highlight = {
+  auto_install          = true,
+  highlight             = {
     enable = true,
     disable = {}
   },
-  indent = {
+  sync_install          = true,
+  ignore_install        = {},
+  indent                = {
     enable = true,
     disable = { 'python' }
   },
@@ -32,7 +34,7 @@ require('nvim-treesitter.configs').setup {
       node_decremental = '<M-space>',
     },
   },
-  textobjects = {
+  textobjects           = {
     select = {
       enable = true,
       lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
@@ -83,4 +85,3 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-

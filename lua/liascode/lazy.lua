@@ -14,18 +14,47 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+
     'tpope/vim-fugitive',
     'tpope/vim-sleuth',
     'tpope/vim-vinegar',
     'gelguy/wilder.nvim',
     'brenoprata10/nvim-highlight-colors',
+
+    "nvim-treesitter/nvim-treesitter-context",
+    "nvim-tree/nvim-tree.lua",
+    "olimorris/onedarkpro.nvim",
+    'romgrk/barbar.nvim',
+    'nvim-lualine/lualine.nvim',
+    "rest-nvim/rest.nvim",
+    'nvim-tree/nvim-web-devicons',
+    'windwp/nvim-ts-autotag',
+    'm4xshen/autoclose.nvim',
+    { 'numToStr/Comment.nvim',         opts = {} },
+    'nvim-lua/plenary.nvim',
+    "catppuccin/nvim",
+
     {
-      'romgrk/barbar.nvim',
+      'kevinhwang91/nvim-ufo',
+      dependencies = 'kevinhwang91/promise-async',
     },
 
     -- Prettier
     'jose-elias-alvarez/null-ls.nvim',
     'MunifTanjim/prettier.nvim',
+
+    {
+      'lewis6991/gitsigns.nvim',
+      opts = {
+        signs = {
+          add = { text = '+' },
+          change = { text = '~' },
+          delete = { text = '_' },
+          topdelete = { text = '‾' },
+          changedelete = { text = '~' },
+        },
+      },
+    },
 
     {
       -- LSP Configuration & Plugins
@@ -41,37 +70,12 @@ require('lazy').setup({
     {
       -- Autocompletion
       'hrsh7th/nvim-cmp',
-      dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
-    },
-
-    {
-      'nvim-tree/nvim-web-devicons',
-    },
-
-    {
-      'windwp/nvim-ts-autotag',
-    },
-
-    {
-      'm4xshen/autoclose.nvim'
-    },
-
-    {
-      'lewis6991/gitsigns.nvim',
-      opts = {
-        signs = {
-          add = { text = '+' },
-          change = { text = '~' },
-          delete = { text = '_' },
-          topdelete = { text = '‾' },
-          changedelete = { text = '~' },
-        },
+      dependencies = {
+        'hrsh7th/cmp-nvim-lsp',
+        'L3MON4D3/LuaSnip',
+        'saadparwaiz1/cmp_luasnip'
       },
     },
-
-    { "catppuccin/nvim",               name = "catppuccin", priority = 1000 },
-    { 'numToStr/Comment.nvim',         opts = {} },
-    { 'nvim-lua/plenary.nvim' },
 
     { 'nvim-telescope/telescope.nvim', version = '*' },
     {
@@ -81,32 +85,12 @@ require('lazy').setup({
         return vim.fn.executable 'make' == 1
       end,
     },
-
     {
       'nvim-treesitter/nvim-treesitter',
       dependencies = {
         'nvim-treesitter/nvim-treesitter-textobjects',
       },
       build = ":TSUpdate",
-    },
-    { "nvim-treesitter/nvim-treesitter-context" },
-
-    { "nvim-tree/nvim-tree.lua", },
-
-    {
-      "olimorris/onedarkpro.nvim",
-      priority = 1000,
-    },
-    {
-      'nvim-lualine/lualine.nvim', -- Fancier statusline
-    },
-    {
-      "rest-nvim/rest.nvim",
-    },
-
-    {
-      'kevinhwang91/nvim-ufo',
-      dependencies = 'kevinhwang91/promise-async',
     },
   },
   {}
