@@ -1,5 +1,7 @@
 -- LSP settings.
+
 local on_attach = function(_, bufnr)
+
   local nmap = function(keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
@@ -33,6 +35,7 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+
 end
 
 local servers = {
@@ -69,12 +72,12 @@ mason_lspconfig.setup_handlers {
 }
 
 -- nvim-cmp setup
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local cmp = require('cmp');
+local luasnip = require('luasnip');
 
-luasnip.config.setup {}
+luasnip.config.setup({});
 
-cmp.setup {
+cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -95,22 +98,8 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
-}
+});
 
 vim.cmd('autocmd BufRead,BufNewFile *.jsx set filetype=typescript.tsx');
 vim.cmd('autocmd BufRead,BufNewFile *.http set filetype=http');
 vim.cmd('autocmd BufRead,BufEnter *.astro set filetype=astro');
-
-local nvim_lsp = require("lspconfig");
-
-nvim_lsp.denols.setup {
-  on_attach = on_attach,
-  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
-  single_file_support = false
-}
-
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  root_dir = nvim_lsp.util.root_pattern("package.json"),
-  single_file_support = false
-}

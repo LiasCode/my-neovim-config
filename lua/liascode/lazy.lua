@@ -15,30 +15,26 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 
-    'tpope/vim-fugitive',
-    'tpope/vim-sleuth',
-    'tpope/vim-vinegar',
-    'gelguy/wilder.nvim',
-    'brenoprata10/nvim-highlight-colors',
+    "tpope/vim-fugitive",
+    "tpope/vim-sleuth",
+    "tpope/vim-vinegar",
+    "gelguy/wilder.nvim",
+    "brenoprata10/nvim-highlight-colors",
 
+    "m4xshen/autoclose.nvim",
     "nvim-treesitter/nvim-treesitter-context",
-    "nvim-tree/nvim-tree.lua",
+    -- "nvim-tree/nvim-tree.lua",
     "olimorris/onedarkpro.nvim",
     'romgrk/barbar.nvim',
     'nvim-lualine/lualine.nvim',
     "rest-nvim/rest.nvim",
     'nvim-tree/nvim-web-devicons',
-    'windwp/nvim-ts-autotag',
-    'm4xshen/autoclose.nvim',
+
     { 'numToStr/Comment.nvim',         opts = {} },
     'nvim-lua/plenary.nvim',
     "catppuccin/nvim",
 
     "Exafunction/codeium.vim", -- GPT
-    {
-      'kevinhwang91/nvim-ufo',
-      dependencies = 'kevinhwang91/promise-async',
-    },
 
     -- Prettier
     'jose-elias-alvarez/null-ls.nvim',
@@ -86,6 +82,7 @@ require('lazy').setup({
         return vim.fn.executable 'make' == 1
       end,
     },
+
     {
       'nvim-treesitter/nvim-treesitter',
       dependencies = {
