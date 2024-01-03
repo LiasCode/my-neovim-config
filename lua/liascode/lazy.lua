@@ -34,6 +34,17 @@ require('lazy').setup({
         },
       },
     },
+
+    {
+      "nvim-treesitter/nvim-treesitter",
+      event = { "BufReadPre", "BufNewFile" },
+      build = ":TSUpdate",
+      dependencies = {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        "windwp/nvim-ts-autotag",
+        'JoosepAlviste/nvim-ts-context-commentstring',
+      },
+    },
   },
   {}
 );
