@@ -20,6 +20,8 @@ require('lazy').setup({
     "tpope/vim-vinegar",
     "gelguy/wilder.nvim",
 
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
     {
       'lewis6991/gitsigns.nvim',
       opts = {
