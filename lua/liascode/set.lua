@@ -23,7 +23,7 @@ vim.opt.smartindent = true
 vim.opt.swapfile = false
 
 vim.opt.backup = false
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "120"
 vim.opt.scrolloff = 10
 vim.opt.isfname:append("@-@")
 
