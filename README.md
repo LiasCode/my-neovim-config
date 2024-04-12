@@ -1,12 +1,4 @@
 ## My Neovim Config
 
-## How to use it:
-  - clone the repo to neovim config folder
-  - open neovim
-  - the lazy plugin manager downloads plugins automatically
-## Requirements
-  - last version of neovim
-  - gcc
-  - clang
-## Want to know more ???
-  - subscribe to youtube channel named "ThePrimeagen"
+[Inspired by Theprimeagen repository](https://github.com/ThePrimeagen/init.lua)
+
