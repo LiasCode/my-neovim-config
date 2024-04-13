@@ -45,3 +45,5 @@ vim.keymap.set("n", "<C-n>", function () vim.cmd 'bnext'  end);
 
 vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format);
 
+-- Exit from terminal
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
