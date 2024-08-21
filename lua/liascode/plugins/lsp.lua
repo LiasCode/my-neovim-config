@@ -15,7 +15,6 @@ return {
   },
 
   config = function()
-
     local cmp = require('cmp')
 
     local cmp_lsp = require("cmp_nvim_lsp")
@@ -39,7 +38,6 @@ return {
       },
       handlers = {
         function(server_name) -- default handler (optional)
-
           require("lspconfig")[server_name].setup {
             capabilities = capabilities
           }
@@ -83,8 +81,8 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
       }, {
-          { name = 'buffer' },
-        })
+        { name = 'buffer' },
+      })
     })
 
     vim.diagnostic.config({
@@ -126,19 +124,19 @@ return {
         --    See `:help CursorHold` for information about when this is executed
 
         -- When you move your cursor, the highlights will be cleared (the second autocommand).
-        local client = vim.lsp.get_client_by_id(event.data.client_id)
-
-        if client and client.server_capabilities.documentHighlightProvider then
-          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-            buffer = event.buf,
-            callback = vim.lsp.buf.document_highlight,
-          })
-
-          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-            buffer = event.buf,
-            callback = vim.lsp.buf.clear_references,
-          })
-        end
+        -- local client = vim.lsp.get_client_by_id(event.data.client_id)
+        --
+        -- if client and client.server_capabilities.documentHighlightProvider then
+        --   vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+        --     buffer = event.buf,
+        --     callback = vim.lsp.buf.document_highlight,
+        --   })
+        --
+        --   vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+        --     buffer = event.buf,
+        --     callback = vim.lsp.buf.clear_references,
+        --   })
+        -- end
       end,
     })
   end
